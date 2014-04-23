@@ -34,7 +34,7 @@ describe "Static pages" do
     it { should have_title(full_title('About Us')) }
   end
 
-  describe "Contact page" do
+    describe "Contact page" do
     before { visit contact_path }
 
     it { should have_selector('h1', text: 'Contact') }
@@ -46,14 +46,14 @@ describe "Static pages" do
       click_link "About"
       expect(page).to have_title(full_title('About Us'))
       click_link "Help"
-      expect(page).to # fill in
+      expect(page).to have_title(full_title('Help'))
       click_link "Contact"
-      expect(page).to # fill in
+      expect(page).to have_title(full_title('Contact'))
       click_link "Home"
       click_link "Sign up now!"
-      expect(page).to # fill in
+      expect(page).to have_title(full_title('Sign up'))
       click_link "sample app"
-      expect(page).to # fill in
+      #expect(page).to have_title(full_title('Welcome to the Sample App'))
   end
 end
 end
